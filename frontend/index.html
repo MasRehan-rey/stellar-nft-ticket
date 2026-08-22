@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stellar NFT ticket control room">
+  <title>Ticketline | Stellar NFT Tickets</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#top" aria-label="Ticketline home">
+        <span class="brand-mark">T</span>
+        <span>ticketline</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#overview"><span class="nav-icon">&#9632;</span>Overview</a>
+        <a class="nav-link" href="#my-tickets"><span class="nav-icon">&#9670;</span>My tickets</a>
+        <a class="nav-link" href="#activity"><span class="nav-icon">&#8635;</span>Activity</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="network-card">
+          <span class="live-dot"></span>
+          <div><strong>Stellar testnet</strong><small>Connected network</small></div>
+        </div>
+        <button class="help-link" type="button">? <span>Need help?</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="top">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Workspace</span><span>/</span><strong>Overview</strong></div>
+        <div class="top-actions">
+          <button class="icon-button" type="button" aria-label="Notifications">&#9673;<span class="notification-dot"></span></button>
+          <button class="wallet-button" id="walletButton" type="button"><span class="wallet-dot"></span><span id="walletLabel">Connect wallet</span><span class="chevron">&#8964;</span></button>
+        </div>
+      </header>
+
+      <section class="content" id="overview">
+        <div class="welcome-row">
+          <div>
+            <p class="eyebrow">SATURDAY / 24 AUGUST 2024</p>
+            <h1>Your ticket room<span class="accent">.</span></h1>
+            <p class="subheading">One place to mint, manage, and check in your Stellar tickets.</p>
+          </div>
+          <button class="primary-button" id="mintButton" type="button"><span>+</span> Mint a ticket</button>
+        </div>
+
+        <div class="stats-grid" aria-label="Ticket statistics">
+          <article class="stat-card stat-main"><div class="stat-label">Tickets minted <span class="info">i</span></div><div class="stat-value">68<span class="stat-muted"> / 100</span></div><div class="progress"><span style="width:68%"></span></div><div class="stat-foot"><span>68% capacity</span><span class="up">+12.5%</span></div></article>
+          <article class="stat-card"><div class="stat-label">Active tickets</div><div class="stat-value">64</div><div class="stat-foot"><span class="status-pill green">● Healthy</span><span>94% of total</span></div></article>
+          <article class="stat-card"><div class="stat-label">Redeemed</div><div class="stat-value">04</div><div class="stat-foot"><span class="status-pill amber">● Live</span><span>6% of total</span></div></article>
+        </div>
+
+        <div class="section-heading" id="my-tickets"><div><p class="eyebrow">YOUR COLLECTION</p><h2>My tickets <span class="count">3</span></h2></div><button class="text-button" type="button" id="filterButton">All tickets <span>&#8964;</span></button></div>
+        <div class="ticket-grid">
+          <article class="ticket-card featured-ticket"><div class="ticket-art art-signal"><span class="art-kicker">TICKETLINE / 001</span><div class="art-shape"></div><span class="art-title">NIGHT<br>SHIFT</span><span class="art-date">24.08.24 / 21:00</span></div><div class="ticket-info"><div><p class="ticket-type">GENERAL ADMISSION</p><h3>Night Shift</h3></div><span class="status-pill green">Active</span></div><div class="ticket-meta"><span>Ticket #0042</span><span>View details &#8594;</span></div></article>
+          <article class="ticket-card"><div class="ticket-art art-circuit"><span class="art-kicker">TICKETLINE / 002</span><div class="circle-grid"></div><span class="art-title">CIRCUIT<br>BREAK</span><span class="art-date">31.08.24 / 20:30</span></div><div class="ticket-info"><div><p class="ticket-type">GENERAL ADMISSION</p><h3>Circuit Break</h3></div><span class="status-pill green">Active</span></div><div class="ticket-meta"><span>Ticket #0037</span><span>View details &#8594;</span></div></article>
+          <article class="ticket-card used-card"><div class="ticket-art art-pulse"><span class="art-kicker">TICKETLINE / 003</span><div class="pulse-lines"></div><span class="art-title">DEEP<br>PULSE</span><span class="art-date">10.08.24 / 22:00</span><span class="used-stamp">USED</span></div><div class="ticket-info"><div><p class="ticket-type">GENERAL ADMISSION</p><h3>Deep Pulse</h3></div><span class="status-pill gray">Redeemed</span></div><div class="ticket-meta"><span>Ticket #0018</span><span>View details &#8594;</span></div></article>
+        </div>
+
+        <section class="activity-section" id="activity"><div class="section-heading"><div><p class="eyebrow">ON-CHAIN HISTORY</p><h2>Recent activity</h2></div><button class="text-button" type="button">View all &#8594;</button></div><div class="activity-list"><div class="activity-row"><span class="activity-icon mint">+</span><div><strong>Ticket #0042 minted</strong><small>Night Shift · 2 minutes ago</small></div><span class="activity-amount">+1 NFT</span></div><div class="activity-row"><span class="activity-icon check">&#10003;</span><div><strong>Ticket #0018 redeemed</strong><small>Deep Pulse · 10 Aug 2024</small></div><span class="activity-amount muted-text">Used</span></div></div></section>
+        <footer><span>Built on <strong>Stellar</strong></span><span>Contract status <b class="live-dot"></b> Operational</span></footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="closeModal" type="button" aria-label="Close">&#10005;</button><p class="eyebrow">NEW TICKET</p><h2 id="modalTitle">Mint your next memory<span class="accent">.</span></h2><p class="modal-copy">This will call <code>mint_ticket(to)</code> on the connected Stellar contract.</p><label for="recipient">Recipient address</label><input id="recipient" type="text" placeholder="G... wallet address"><button class="primary-button full-width" id="confirmMint" type="button">Connect wallet to mint <span>&#8594;</span></button><p class="demo-note">Demo mode is active. No transaction will be submitted.</p></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
